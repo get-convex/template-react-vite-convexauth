@@ -7,7 +7,7 @@
     "dev": "npm-run-all --parallel dev:frontend dev:backend",
     "dev:frontend": "vite --open",
     "dev:backend": "convex dev",
-    "predev": "convex dev --until-success && convex dashboard",
+    "predev": "convex dev --until-success && convex dev --once --run-sh \"node setup.mjs --once\" && convex dashboard",
     "build": "tsc -b && vite build",
     "lint": "tsc && eslint .  --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -25,6 +25,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "dotenv": "^16.4.7",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
